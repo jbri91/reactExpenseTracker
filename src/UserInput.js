@@ -9,6 +9,7 @@ class UserInput extends React.Component {
                 <input placeHolder="Description of Expense" ></input>
                 <input type="number" placeHolder="Amount" ></input>
                 <input placeHolder="Where?" ></input>
+                <button>Submit</button>
             </form>
         )
     }

@@ -14,6 +14,14 @@ class Table extends React.Component {
                     <th>Where was purchase made?</th>
                 </tr>
                 </thead>
+                <tbody>
+                    <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                </tbody>
             </table>
                </div>
         )    

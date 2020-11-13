@@ -1,6 +1,8 @@
 import ReactDOM from 'react-dom'
 import './App.css';
 import Header from './components/Header';
+import Table from './components/Table';
+import UserInput from './UserInput';
 
 function App() {
   return (
@@ -8,6 +10,8 @@ function App() {
       <header >
         <p>
           <Header />
+          <UserInput />
+          <Table />
         </p>
         </header>
     </div>

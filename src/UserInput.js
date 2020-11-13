@@ -5,10 +5,10 @@ class UserInput extends React.Component {
     render() {
         return (
             <form>
-                <input placeHolder="Date of Expense" ></input>
+                <input type="date" placeHolder="Date of Expense" ></input>
                 <input placeHolder="Description of Expense" ></input>
-                <input placeHolder="Amount" ></input>
-                <input placeHolder="Where was purchase made?" ></input>
+                <input type="number" placeHolder="Amount" ></input>
+                <input placeHolder="Where?" ></input>
             </form>
         )
     }

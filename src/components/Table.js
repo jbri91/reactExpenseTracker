@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 
 class Table extends React.Component {
     
@@ -43,5 +42,5 @@ class Table extends React.Component {
 }
 }
 
-ReactDOM.render(<Table />, document.getElementById('root'))
+
 export default Table

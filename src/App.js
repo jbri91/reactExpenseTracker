@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom'
+import React from 'react'
 import './App.css';
 import Header from './components/Header';
 import Table from './components/Table';
@@ -12,11 +12,9 @@ function App() {
           <Header />
           <UserInput />
           <Table />
-        </header>
+      </header>
     </div>
   );
 }
-
-ReactDOM.render(<App />, document.getElementById('root'))
 
 export default App;

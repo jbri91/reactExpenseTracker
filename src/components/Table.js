@@ -22,17 +22,17 @@ class Table extends React.Component {
                 </thead>
                 <tbody>
                     <tr>
-                        <td>10/20/1991</td>
+                        <td>10/20/2020</td>
                         <td>Computer</td>
                         <td>$999</td>
                         <td>Apple</td>
                         <td type="btn"  onClick={this.DeleteExpense}  className="btn-danger">X</td>
                     </tr>
                     <tr>
-                        <td>10/20/1991</td>
-                        <td>Computer</td>
-                        <td>$999</td>
-                        <td>Apple</td>
+                        <td>10/30/2020</td>
+                        <td>Coffee</td>
+                        <td>$5</td>
+                        <td>Starbucks</td>
                         <td type="btn" onClick={this.DeleteExpense} className="btn-danger">X</td>
                     </tr>
                 </tbody>

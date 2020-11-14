@@ -1,18 +1,22 @@
 import React from "react";
-import Expense from "./Expense";
-import TableHead from './TableHead'
+import ExpenseRow from "./ExpenseRow";
 
 class Table extends React.Component {
-
   render() {
     return (
       <div>
         <table className="table table-bordered table-hover">
           <thead className="thead-dark thead-border">
-           <TableHead />
+            <tr>
+              <th>Date Of Expense</th>
+              <th>Description of Expense</th>
+              <th>Amount</th>
+              <th>Where was purchase made?</th>
+              <th>Delete Expense</th>
+            </tr>
           </thead>
           <tbody>
-            <Expense />
+            <ExpenseRow />
           </tbody>
         </table>
       </div>

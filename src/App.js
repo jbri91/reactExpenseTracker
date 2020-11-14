@@ -9,11 +9,9 @@ function App() {
   return (
     <div className="App">
       <header >
-        <p>
           <Header />
           <UserInput />
           <Table />
-        </p>
         </header>
     </div>
   );

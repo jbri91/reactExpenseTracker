@@ -16,7 +16,11 @@ class Table extends React.Component {
             </tr>
           </thead>
           <tbody>
-            <ExpenseRow />
+            <ExpenseRow
+            date="10/20/2020"
+            desc="Computer"
+            amount="$999"
+            place="Apple" />
           </tbody>
         </table>
       </div>

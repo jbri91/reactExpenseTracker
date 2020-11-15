@@ -1,21 +1,21 @@
 import React from "react";
 
-class Expense extends React.Component {
+class ExpenseRow extends React.Component {
   constructor() {
     super();
   }
-
   DeleteExpense = () => {
     console.log("Deleted!");
   };
 
+
   render() {
     return (
       <tr>
-        <td>10/20/2020</td>
-        <td>Computer</td>
-        <td>$999</td>
-        <td>Apple</td>
+        <td>{this.props.date}</td>
+        <td>{this.props.desc}</td>
+        <td>{this.props.amount}</td>
+        <td>{this.props.place}</td>
         <td type="btn" onClick={this.DeleteExpense} className="btn-danger">
           X
         </td>
@@ -24,4 +24,4 @@ class Expense extends React.Component {
   }
 }
 
-export default Expense;
+export default ExpenseRow;

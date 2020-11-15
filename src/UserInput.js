@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 
 class UserInput extends React.Component {
   SubmitExpense(event) {
@@ -36,7 +35,5 @@ class UserInput extends React.Component {
     );
   }
 }
-
-ReactDOM.render(<UserInput />, document.getElementById("root"));
 
 export default UserInput;

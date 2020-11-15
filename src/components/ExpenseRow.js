@@ -1,9 +1,7 @@
 import React from "react";
 
 class ExpenseRow extends React.Component {
-  constructor() {
-    super();
-  }
+
   DeleteExpense = () => {
     console.log("Deleted!");
   };

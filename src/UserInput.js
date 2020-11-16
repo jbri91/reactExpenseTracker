@@ -4,7 +4,7 @@ import ExpenseRow from "./components/ExpenseRow";
 class UserInput extends React.Component {
   constructor() {
     super()
-    this.setState = {
+    this.state = {
       expenses: []
     }
 
@@ -14,7 +14,7 @@ class UserInput extends React.Component {
 
   SubmitExpense(e) {
     e.preventDefault() 
-    console.log(this.setState.expenses); 
+    console.log({}); 
   }
 
   render() {
@@ -24,15 +24,18 @@ class UserInput extends React.Component {
           className="col-sm-6 col-md-3"
           type="date"
           placeholder="Date of Expense"
+          id="date"
         ></input>
         <input
           className="col-sm-6 col-md-3"
           placeholder="Description of Expense"
+          id="desc"
         ></input>
         <input
           className="col-sm-6 col-md-3"
           type="number"
           placeholder="Amount"
+          id="amount"
         ></input>
         <input className="col-sm-6 col-md-3" placeholder="Where?"></input>
         <button

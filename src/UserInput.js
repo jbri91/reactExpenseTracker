@@ -1,9 +1,20 @@
 import React from "react";
+import ExpenseRow from "./components/ExpenseRow";
 
 class UserInput extends React.Component {
-  SubmitExpense(event) {
-    event.preventDefault();
-    console.log("I submitted this");
+  constructor() {
+    super()
+    this.setState = {
+      expenses: []
+    }
+
+    this.SubmitExpense = this.SubmitExpense.bind(this)
+
+  }
+
+  SubmitExpense(e) {
+    e.preventDefault() 
+    console.log(this.setState.expenses); 
   }
 
   render() {

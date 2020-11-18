@@ -25,7 +25,7 @@ class UserInput extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log(this.state.desc)
-   this.state.desc = ""
+    e.target.value=""
     
 
     

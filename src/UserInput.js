@@ -24,12 +24,16 @@ class UserInput extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    // const value = e.target.value
+    // console.log(this.setState({[e.target.name]: value}))
     console.log(this.state.desc)
-    e.target.value=""
-    
-
-    
-    }
+    this.setState({
+       date:"",
+       desc: "",
+       amount: "",
+       place: ""
+    })
+}
 
   render() {
     return (

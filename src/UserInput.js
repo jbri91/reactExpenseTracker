@@ -1,47 +1,76 @@
 import React from "react";
-import ExpenseRow from "./components/ExpenseRow";
 
 class UserInput extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props);
     this.state = {
-      expenses: []
+      date: "",
+      desc: "",
+      amount: "",
+      place: ""
+
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(e) {
+  const value = e.target.value;
+  this.setState({ 
+    ...this.state,
+    [e.target.name]: value
+  })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log(this.state.desc)
+   this.state.desc = ""
+    
+
+    
     }
-
-    this.SubmitExpense = this.SubmitExpense.bind(this)
-
-  }
-
-  SubmitExpense(e) {
-    e.preventDefault() 
-    console.log({}); 
-  }
 
   render() {
     return (
       <form>
         <input
+          name="date"
           className="col-sm-6 col-md-3"
           type="date"
           placeholder="Date of Expense"
           id="date"
+          value={this.state.date}
+          onChange={this.handleChange}
         ></input>
         <input
+          name="desc"
           className="col-sm-6 col-md-3"
           placeholder="Description of Expense"
           id="desc"
+          value={this.state.desc}
+          onChange={this.handleChange}
         ></input>
         <input
+          name="amount"
           className="col-sm-6 col-md-3"
           type="number"
           placeholder="Amount"
           id="amount"
+          value={this.state.amount}
+          onChange={this.handleChange}
         ></input>
-        <input className="col-sm-6 col-md-3" placeholder="Where?"></input>
+        <input 
+        name="place"
+        className="col-sm-6 col-md-3" 
+        placeholder="Where?"
+        id="place"
+        value={this.state.place}
+        onChange={this.handleChange}></input>
         <button
           type="submit"
           className="btn btn-secondary"
-          onClick={this.SubmitExpense}
+          onClick={this.handleSubmit}
         >
           Submit
         </button>

@@ -13,6 +13,12 @@ class App extends React.Component {
       desc: "",
       amount: "",
       place: "",
+      expense: [
+        {date: '11/18/2020'},
+        {desc: 'Computer'},
+        {amount: '123'},
+        {place: 'Apple'}
+      ]
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -43,10 +49,10 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <UserInput 
-        date={this.state.date}
-        desc={this.state.desc}
-        amount={this.state.amount}
-        place={this.state.place} />
+        date={this.state.expense[0]}
+        desc={this.state.expense[0]}
+        amount={this.state.expense[0]}
+        place={this.state.expense[0]} />
         <Table />
       </div>
     );

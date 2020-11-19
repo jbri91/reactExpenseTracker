@@ -1,6 +1,5 @@
 import React from "react";
 import ExpenseRow from "./ExpenseRow";
-import UserInput from './UserInput'
 
 class Table extends React.Component {
   render() {
@@ -18,10 +17,10 @@ class Table extends React.Component {
           </thead>
           <tbody>
             <ExpenseRow
-            date="10/20/2020"
-            desc="Computer"
-            amount="$999"
-            place="Apple" />
+            date={this.props.date}
+            desc={this.props.date}
+            amount={this.props.date}
+            place={this.props.date} />
           </tbody>
         </table>
       </div>

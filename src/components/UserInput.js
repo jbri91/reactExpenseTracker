@@ -11,7 +11,7 @@ class UserInput extends React.Component {
           type="date"
           placeholder="Date of Expense"
           id="date"
-          value={this.props.date}
+          // value={this.props.date}
           onChange={this.props.handleChange}
         ></input>
         <input
@@ -19,7 +19,7 @@ class UserInput extends React.Component {
           className="col-sm-6 col-md-3"
           placeholder="Description of Expense"
           id="desc"
-          value={this.props.desc}
+          // value={this.props.desc}
           onChange={this.props.handleChange}
         ></input>
         <input
@@ -28,7 +28,7 @@ class UserInput extends React.Component {
           type="number"
           placeholder="Amount"
           id="amount"
-          value={this.props.amount}
+          // value={this.props.amount}
           onChange={this.props.handleChange}
         ></input>
         <input
@@ -36,7 +36,7 @@ class UserInput extends React.Component {
           className="col-sm-6 col-md-3"
           placeholder="Where?"
           id="place"
-          value={this.props.place}
+          // value={this.props.place}
           onChange={this.props.handleChange}
         ></input>
         <button

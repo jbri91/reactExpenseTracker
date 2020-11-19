@@ -1,5 +1,6 @@
 import React from "react";
 import ExpenseRow from "./ExpenseRow";
+import UserInput from './UserInput'
 
 class Table extends React.Component {
   render() {

@@ -1,42 +1,8 @@
 import React from "react";
 
 class UserInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      date: "",
-      desc: "",
-      amount: "",
-      place: ""
-
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(e) {
-  const value = e.target.value;
-  this.setState({ 
-    // ...this.state,
-    [e.target.name]: value
-  })
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    // const value = e.target.value
-    // console.log(this.setState({[e.target.name]: value}))
-   
-    this.setState({
-       date:"",
-       desc: "",
-       amount: "",
-       place: ""
-    })
-}
-
   render() {
-    console.log(this.state)
+    console.log(this.state);
     return (
       <form>
         <input
@@ -45,16 +11,16 @@ class UserInput extends React.Component {
           type="date"
           placeholder="Date of Expense"
           id="date"
-          value={this.state.date}
-          onChange={this.handleChange}
+          value={this.props.date}
+          onChange={this.props.handleChange}
         ></input>
         <input
           name="desc"
           className="col-sm-6 col-md-3"
           placeholder="Description of Expense"
           id="desc"
-          value={this.state.desc}
-          onChange={this.handleChange}
+          value={this.props.desc}
+          onChange={this.props.handleChange}
         ></input>
         <input
           name="amount"
@@ -62,20 +28,21 @@ class UserInput extends React.Component {
           type="number"
           placeholder="Amount"
           id="amount"
-          value={this.state.amount}
-          onChange={this.handleChange}
+          value={this.props.amount}
+          onChange={this.props.handleChange}
         ></input>
-        <input 
-        name="place"
-        className="col-sm-6 col-md-3" 
-        placeholder="Where?"
-        id="place"
-        value={this.state.place}
-        onChange={this.handleChange}></input>
+        <input
+          name="place"
+          className="col-sm-6 col-md-3"
+          placeholder="Where?"
+          id="place"
+          value={this.props.place}
+          onChange={this.props.handleChange}
+        ></input>
         <button
           type="submit"
           className="btn btn-secondary"
-          onClick={this.handleSubmit}
+          onClick={this.props.handleSubmit}
         >
           Submit
         </button>

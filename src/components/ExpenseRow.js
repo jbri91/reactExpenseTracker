@@ -1,11 +1,11 @@
 import React from "react";
+import UserInput from './UserInput'
 
 class ExpenseRow extends React.Component {
 
   DeleteExpense = () => {
     console.log("Deleted!");
-  };
-
+  }; 
 
   render() {
     return (

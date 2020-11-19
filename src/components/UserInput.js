@@ -17,7 +17,7 @@ class UserInput extends React.Component {
   handleChange(e) {
   const value = e.target.value;
   this.setState({ 
-    ...this.state,
+    // ...this.state,
     [e.target.name]: value
   })
   }
@@ -26,7 +26,7 @@ class UserInput extends React.Component {
     e.preventDefault();
     // const value = e.target.value
     // console.log(this.setState({[e.target.name]: value}))
-    console.log(this.state.desc)
+    console.log(this.state)
     this.setState({
        date:"",
        desc: "",

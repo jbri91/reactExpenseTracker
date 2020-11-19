@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Table from "./components/Table";
-import UserInput from "./UserInput";
+import UserInput from "./components/UserInput";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {

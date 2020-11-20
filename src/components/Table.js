@@ -2,6 +2,7 @@ import React from "react";
 import ExpenseRow from "./ExpenseRow";
 
 class Table extends React.Component {
+
   render() {
     return (
       <div>
@@ -16,11 +17,13 @@ class Table extends React.Component {
             </tr>
           </thead>
           <tbody>
-            <ExpenseRow
+            {this.props.expenses.map((item, key) => 
+            <ExpenseRow item={item} key={key} />)}
+            {/* <ExpenseRow
             date={this.props.expenses[0].date}
             desc={this.props.expenses[0].desc}
             amount={this.props.expenses[0].amount}
-            place={this.props.expenses[0].place} />
+            place={this.props.expenses[0].place} /> */}
           </tbody>
         </table>
       </div>

@@ -17,10 +17,26 @@ class Table extends React.Component {
           </thead>
           <tbody>
             <ExpenseRow
-            date={this.props.date}
-            desc={this.props.date}
-            amount={this.props.date}
-            place={this.props.date} />
+            date={this.props.expenses[0].date}
+            desc={this.props.expenses[0].desc}
+            amount={this.props.expenses[0].amount}
+            place={this.props.expenses[0].place} />
+            
+            <ExpenseRow
+            date={this.props.expenses[1].date}
+            desc={this.props.expenses[1].desc}
+            amount={this.props.expenses[1].amount}
+            place={this.props.expenses[1].place} />
+            <ExpenseRow
+            date={this.props.expenses[2].date}
+            desc={this.props.expenses[2].desc}
+            amount={this.props.expenses[2].amount}
+            place={this.props.expenses[2].place} />
+            <ExpenseRow
+            date={this.props.expenses[3].date}
+            desc={this.props.expenses[3].desc}
+            amount={this.props.expenses[3].amount}
+            place={this.props.expenses[3].place} />
           </tbody>
         </table>
       </div>

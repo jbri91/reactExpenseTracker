@@ -9,16 +9,12 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      date: "",
-      desc: "",
-      amount: "",
-      place: "",
       expense: [
-        {date: '11/18/2020'},
-        {desc: 'Computer'},
-        {amount: '123'},
-        {place: 'Apple'}
-      ]
+        {date: '11/18/2020', desc: 'Computer', amount: '123', place: 'Apple'},
+        {date: '11/18/2020', desc: 'Computer', amount: '123', place: 'Apple'},
+        {date: '11/18/2020', desc: 'Computer', amount: '123', place: 'Apple'},
+        {date: '11/18/2020', desc: 'Computer', amount: '123', place: 'Apple'}
+    ]
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -33,8 +29,7 @@ class App extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // const value = e.target.value
-    // console.log(this.setState({[e.target.name]: value}))
+   //create an object and add it to this.state.expenses
 
     this.setState({
       date: "",
@@ -45,15 +40,19 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <div className="App">
         <Header />
         <UserInput 
-        date={this.state.expense[0]}
-        desc={this.state.expense[0]}
-        amount={this.state.expense[0]}
-        place={this.state.expense[0]} />
-        <Table />
+        date={this.state.date}
+        desc={this.state.desc}
+        amount={this.state.amount}
+        place={this.state.place}
+        onChange={this.handleChange}
+        onClick={this.handleSubmit} />
+        <Table 
+        expenses={this.state.expense}/>
       </div>
     );
   }

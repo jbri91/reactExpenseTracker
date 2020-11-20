@@ -30,13 +30,14 @@ class App extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
    //create an object and add it to this.state.expenses
-
     this.setState({
       date: "",
       desc: "",
       amount: "",
       place: "",
     });
+    this.setState += this.state.expenses
+
   }
 
   render() {

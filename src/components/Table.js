@@ -18,12 +18,13 @@ class Table extends React.Component {
           </thead>
           <tbody>
             {this.props.expenses.map((item, key) => 
-            <ExpenseRow item={item} key={key} />)}
-            {/* <ExpenseRow
-            date={this.props.expenses[0].date}
-            desc={this.props.expenses[0].desc}
-            amount={this.props.expenses[0].amount}
-            place={this.props.expenses[0].place} /> */}
+            <ExpenseRow 
+            date={this.props.expenses[key].date}
+            desc={this.props.expenses[key].desc}
+            amount={this.props.expenses[key].amount}
+            place={this.props.expenses[key].place}
+            item={item} key={key} />)}
+            
           </tbody>
         </table>
       </div>

@@ -10,10 +10,10 @@ class App extends React.Component {
     super(props)
     this.state = {
       expense: [
-        {date: '11/18/2020', desc: 'Computer', amount: '123', place: 'Apple'},
-        {date: '11/18/2020', desc: 'Computer', amount: '123', place: 'Apple'},
-        {date: '11/18/2020', desc: 'Computer', amount: '123', place: 'Apple'},
-        {date: '11/18/2020', desc: 'Computer', amount: '123', place: 'Apple'}
+        {date: '11/18/2020', desc: 'Computer', amount: '$999', place: 'Apple'},
+        {date: '11/18/2020', desc: 'Bookbag', amount: '$90', place: 'Nike'},
+        {date: '11/18/2020', desc: 'Speaker', amount: '$500', place: 'BestBuy'},
+        {date: '11/18/2020', desc: 'Coffee', amount: '$5', place: 'Starbucks'}
     ]
     };
     this.handleChange = this.handleChange.bind(this);

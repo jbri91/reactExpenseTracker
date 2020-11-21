@@ -5,6 +5,7 @@ import Table from "./components/Table";
 import UserInput from "./components/UserInput";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -36,9 +37,9 @@ class App extends React.Component {
         amount: '',
         place: ''
       }]
-    }
-    dataExpense.expense = dataExpense.expense.push(this.state.expense)
-    console.log(dataExpense.expense)
+      }
+    this.setState.dataExpense.expense = dataExpense.expense.push(this.state.expenses)
+
    //create an object and add it to this.state.expenses
   // const {name, value} = e.target 
   //  this.setState({ [name]: value

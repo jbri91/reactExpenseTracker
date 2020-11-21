@@ -41,15 +41,15 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state)
+    
     return (
       <div className="App">
         <Header />
         <UserInput 
-        date={this.state.date}
-        desc={this.state.desc}
-        amount={this.state.amount}
-        place={this.state.place}
+        date={this.state.expense.date}
+        desc={this.state.expense.desc}
+        amount={this.state.expense.amount}
+        place={this.state.expense.place}
         onChange={this.handleChange}
         onClick={this.handleSubmit} />
         <Table 

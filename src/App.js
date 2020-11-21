@@ -29,19 +29,24 @@ class App extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    const dataExpense = {
+      expense: [{
+        date: '',
+        desc: '',
+        amount: '',
+        place: ''
+      }]
+    }
+    dataExpense.expense = dataExpense.expense.push(this.state.expense)
+    console.log(dataExpense.expense)
    //create an object and add it to this.state.expenses
-    this.setState({
-      date: "",
-      desc: "",
-      amount: "",
-      place: "",
-    });
-    this.setState += this.state.expenses
-
+  // const {name, value} = e.target 
+  //  this.setState({ [name]: value
+  //   }) 
   }
 
   render() {
-    
+    console.log(this.state.expense)
     return (
       <div className="App">
         <Header />

@@ -30,15 +30,16 @@ class App extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const dataExpense = {
-      expense: [{
-        date: '',
-        desc: '',
-        amount: '',
-        place: ''
-      }]
-      }
-    this.setState.dataExpense.expense = dataExpense.expense.push(this.state.expenses)
+    console.log('Hello World')
+    // const dataExpense = {
+    //   expense: [{
+    //     date: '',
+    //     desc: '',
+    //     amount: '',
+    //     place: ''
+    //   }]
+    //   }
+    // this.setState.dataExpense.expense = dataExpense.expense.push(this.state.expenses)
 
    //create an object and add it to this.state.expenses
   // const {name, value} = e.target 
@@ -47,7 +48,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.expense)
     return (
       <div className="App">
         <Header />
@@ -56,8 +56,8 @@ class App extends React.Component {
         desc={this.state.expense.desc}
         amount={this.state.expense.amount}
         place={this.state.expense.place}
-        onChange={this.handleChange}
-        onClick={this.handleSubmit} />
+        handleChange={this.handleChange}
+        handleSubmit={this.handleSubmit} />
         <Table 
         expenses={this.state.expense}/>
       </div>

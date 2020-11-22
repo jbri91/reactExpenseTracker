@@ -34,20 +34,28 @@ class App extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.state.expense.push(
-      this.setState({
-        expense: [{
-        date: this.state.date,
-        desc: this.state.desc,
-        amount: this.state.amount,
-        place: this.state.place
-        }]
-      })
-      
-      )
-  }
+      // this.setState({
+      //   expense: [{
+      //   date: this.state.date,
+      //   desc: this.state.desc,
+      //   amount: this.state.amount,
+      //   place: this.state.place
+      //   }]
+      // })
+
+      this.setState(prevState => ({
+        expense: {
+          ...prevState.expense,
+          date: this.state.date,
+          desc: this.state.desc,
+          amount: this.state.amount,
+          place: this.state.place
+        }
+      }))
+}
 
   render() {
+    console.log(this.state)
     return (
       <div className="App">
         <Header />

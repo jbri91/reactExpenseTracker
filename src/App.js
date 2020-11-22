@@ -10,6 +10,10 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      date: "",
+      desc: "",
+      amount: "",
+      place: "",
       expense: [
         {date: '11/18/2020', desc: 'Computer', amount: '$999', place: 'Apple'},
         {date: '11/18/2020', desc: 'Bookbag', amount: '$90', place: 'Nike'},
@@ -30,24 +34,18 @@ class App extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log('Hello World')
-    // const dataExpense = {
-    //   expense: [{
-    //     date: '',
-    //     desc: '',
-    //     amount: '',
-    //     place: ''
-    //   }]
-    //   }
-    // this.setState.dataExpense.expense = dataExpense.expense.push(this.state.expenses)
-
-   //create an object and add it to this.state.expenses
-  // const {name, value} = e.target 
-  //  this.setState({ [name]: value
-  //   }) 
+    this.setState({
+      expense: [{
+      date: this.state.date,
+      desc: this.state.desc,
+      amount: this.state.amount,
+      place: this.state.place
+      }]
+    })
   }
 
   render() {
+    console.log(this.state)
     return (
       <div className="App">
         <Header />

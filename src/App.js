@@ -48,32 +48,16 @@ class App extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
-   const currentState =  this.setState({
-      expense: [
-        {
-          date: this.state.date,
-          desc: this.state.desc,
-          amount: this.state.amount,
-          place: this.state.place,
-        },
-      ],
+    this.state.expense.push({
+      date: this.state.date,
+      desc: this.state.desc,
+      amount: this.state.amount,
+      place: this.state.place,
     });
 
-  const previousState =  this.setState((prevState) => ({
-      expense: {
-        ...prevState.expense,
-        date: prevState.expense.date,
-        desc: prevState.expense.desc,
-        amount: prevState.expense.amount,
-        place: prevState.expense.place,
-      }
-    }));
+    const newExpense = [...this.state.expense];
 
-    previousState.push(currentState)
-
-
-
+    this.setState({ expense: newExpense });
   }
 
   render() {

@@ -20,7 +20,11 @@ class App extends React.Component {
           amount: "$999",
           place: "Apple",
         },
-        { date: "11/18/2020", desc: "Bookbag", amount: "$90", place: "Nike" },
+        { 
+        date: "11/18/2020", 
+        desc: "Bookbag", 
+        amount: "$90", 
+        place: "Nike" },
         {
           date: "11/18/2020",
           desc: "Speaker",
@@ -48,16 +52,20 @@ class App extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.state.expense.push({
+
+    const newExpense = [...this.state.expense];
+
+    const expenses = {
       date: this.state.date,
       desc: this.state.desc,
       amount: this.state.amount,
       place: this.state.place,
-    });
+    };
 
-    const newExpense = [...this.state.expense];
-
+    newExpense.push(expenses);
+    
     this.setState({ expense: newExpense });
+    
   }
 
   render() {

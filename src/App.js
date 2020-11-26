@@ -5,6 +5,7 @@ import Table from "./components/Table";
 import UserInput from "./components/UserInput";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);

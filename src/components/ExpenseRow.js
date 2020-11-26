@@ -1,9 +1,7 @@
 import React from "react";
-
 class ExpenseRow extends React.Component {
   DeleteExpense = () => {
-    let array = [...this.props]
-    console.log(array)
+   console.log('hello"')
     }
 
 

@@ -23,7 +23,9 @@ class Table extends React.Component {
             desc={this.props.expenses[key].desc}
             amount={this.props.expenses[key].amount}
             place={this.props.expenses[key].place}
-            item={item} key={key} />)}
+            item={item} key={key} 
+            deleteRow={this.props.deleteRow}
+            />)}
             
           </tbody>
         </table>

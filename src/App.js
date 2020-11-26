@@ -68,6 +68,10 @@ class App extends React.Component {
     
   }
 
+  deleteRow(e) {
+    console.log('Does this work?')
+  }
+
   render() {
     return (
       <div className="App">
@@ -80,7 +84,9 @@ class App extends React.Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
-        <Table expenses={this.state.expense} />
+        <Table 
+        expenses={this.state.expense}
+        deleteRow={this.deleteRow} />
       </div>
     );
   }

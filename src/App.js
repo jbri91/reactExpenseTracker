@@ -41,6 +41,7 @@ class App extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.deleteRow = this.deleteRow.bind(this);
   }
   handleChange(e) {
     const value = e.target.value;
@@ -69,10 +70,26 @@ class App extends React.Component {
   }
 
   deleteRow(e) {
-    console.log('Does this work?')
+  console.log(e.target.parentElement)
+  if(e.target.id === 'deleteButton') {
+    e.target.parentElement.remove()
+  }
+
+  const newExpense = [...this.state.expense]
+
+  // const expenses = {
+  //   date:this.state.date,
+  //   desc: this.state.desc,
+  //   amount: this.state.amount,
+  //   place: this.state.place
+  // }
+
+  this.setState({ expense: newExpense })
+
   }
 
   render() {
+    console.log(this.state)
     return (
       <div className="App">
         <Header />

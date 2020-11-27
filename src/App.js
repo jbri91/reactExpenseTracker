@@ -54,17 +54,16 @@ class App extends React.Component {
     this.setState({ expense: newExpense })
   }
 
+  // localStorage.removeItem('Johnny')
+
   
 }
 
-// componentDidMount() {
-//   this.setState( prevState => ({
-//   expense: [
-//     ...prevState.expense,
-//     JSON.parse(localStorage.getItem('Johnny'))
-//   ]
-//   }))
-// }
+componentDidMount() {   
+const getItem = localStorage.getItem('Johnny')
+const expenseArray = this.state.expense
+expenseArray.push(getItem)
+}
 
 
   

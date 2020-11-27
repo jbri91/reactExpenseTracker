@@ -6,7 +6,7 @@ import UserInput from "./components/UserInput";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
-JSON.parse(window.localStorage.getItem('Johnny'))
+
 
 class App extends React.Component {
   constructor(props) {
@@ -75,10 +75,21 @@ class App extends React.Component {
   deleteRow(e) {
   if(e.target.id === 'deleteButton') {
     e.target.parentElement.remove()
+    const newExpense = [...this.state.expense]
+    this.setState({ expense: newExpense })
   }
-  const newExpense = [...this.state.expense]
-  this.setState({ expense: newExpense })
+
+  
 }
+
+// componentDidMount() {
+//   this.setState( prevState => ({
+//   expense: [
+//     ...prevState.expense,
+//     JSON.parse(localStorage.getItem('Johnny'))
+//   ]
+//   }))
+// }
 
 
   

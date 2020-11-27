@@ -16,31 +16,7 @@ class App extends React.Component {
       desc: "",
       amount: "",
       place: "",
-      expense: [
-        {
-          date: "11/18/2020",
-          desc: "Computer",
-          amount: "$999",
-          place: "Apple",
-        },
-        { 
-        date: "11/18/2020", 
-        desc: "Bookbag", 
-        amount: "$90", 
-        place: "Nike" },
-        {
-          date: "11/18/2020",
-          desc: "Speaker",
-          amount: "$500",
-          place: "BestBuy",
-        },
-        {
-          date: "11/18/2020",
-          desc: "Coffee",
-          amount: "$5",
-          place: "Starbucks",
-        },
-      ],
+      expense: [],
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -76,7 +52,9 @@ class App extends React.Component {
   if(e.target.id === 'deleteButton') {
     e.target.parentElement.remove()
     const newExpense = [...this.state.expense]
+
     this.setState({ expense: newExpense })
+    console.log(this.state)
   }
 
   

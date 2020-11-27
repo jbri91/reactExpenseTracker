@@ -10,7 +10,7 @@ class ExpenseRow extends React.Component {
       <tr>
         <td>{this.props.date}</td>
         <td>{this.props.desc}</td>
-        <td>{this.props.amount}</td>
+        <td>${this.props.amount}</td>
         <td>{this.props.place}</td>
         <td
           type="btn"

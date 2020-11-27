@@ -31,7 +31,6 @@ class App extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
     const newExpense = [...this.state.expense];
 
     const expenses = {
@@ -52,9 +51,7 @@ class App extends React.Component {
   if(e.target.id === 'deleteButton') {
     e.target.parentElement.remove()
     const newExpense = [...this.state.expense]
-
     this.setState({ expense: newExpense })
-    console.log(this.state)
   }
 
   

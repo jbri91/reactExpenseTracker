@@ -14,9 +14,9 @@ class ExpenseRow extends React.Component {
         <td>{this.props.place}</td>
         <td
           type="btn"
-          onClick={this.DeleteExpense}
-          key={1}
+          onClick={this.props.deleteRow}
           className="btn-danger"
+          id='deleteButton'
         >
           X
         </td>

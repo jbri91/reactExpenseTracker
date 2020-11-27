@@ -64,7 +64,8 @@ class App extends React.Component {
     };
 
     newExpense.push(expenses);
-    
+
+    localStorage.setItem(e.target.key, this.state.expenses)
     this.setState({ expense: newExpense });
     
   }
@@ -85,6 +86,7 @@ class App extends React.Component {
   // }
 
   this.setState({ expense: newExpense })
+  
 
   }
 

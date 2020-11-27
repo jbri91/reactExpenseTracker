@@ -6,6 +6,8 @@ import UserInput from "./components/UserInput";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
+JSON.parse(window.localStorage.getItem('Johnny'))
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -65,33 +67,24 @@ class App extends React.Component {
 
     newExpense.push(expenses);
 
-    localStorage.setItem(e.target.key, this.state.expenses)
+    localStorage.setItem('Johnny', JSON.stringify(newExpense))
     this.setState({ expense: newExpense });
     
   }
 
   deleteRow(e) {
-  console.log(e.target.parentElement)
   if(e.target.id === 'deleteButton') {
     e.target.parentElement.remove()
   }
-
   const newExpense = [...this.state.expense]
-
-  // const expenses = {
-  //   date:this.state.date,
-  //   desc: this.state.desc,
-  //   amount: this.state.amount,
-  //   place: this.state.place
-  // }
-
   this.setState({ expense: newExpense })
+}
+
+
   
 
-  }
 
   render() {
-    console.log(this.state)
     return (
       <div className="App">
         <Header />

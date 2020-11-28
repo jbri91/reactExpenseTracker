@@ -42,7 +42,7 @@ class App extends React.Component {
 
     newExpense.push(expenses);
 
-    localStorage.setItem('Johnny', JSON.stringify(newExpense))
+    localStorage.setItem('Expense', JSON.stringify(newExpense))
     this.setState({ expense: newExpense });
     
   }
@@ -60,9 +60,9 @@ class App extends React.Component {
 }
 
 componentDidMount() {   
-const getItem = localStorage.getItem('Johnny')
-const expenseArray = this.state.expense
-expenseArray.push(getItem)
+const savedExpenses = JSON.parse(localStorage.getItem('Expense')) || [];
+const expense = [...this.state.expense, ...savedExpenses];
+this.setState({ expense });
 }
 
 

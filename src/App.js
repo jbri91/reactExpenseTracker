@@ -53,7 +53,7 @@ class App extends React.Component {
     }
       e.target.parentElement.remove();
 
-      this.setState({ newExpense });
+      // this.setState({ newExpense });
     
   }
 

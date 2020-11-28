@@ -1,10 +1,5 @@
 import React from "react";
 class ExpenseRow extends React.Component {
-  DeleteExpense = () => {
-   console.log('hello"')
-    }
-
-
   render() {
     return (
       <tr>
@@ -14,7 +9,7 @@ class ExpenseRow extends React.Component {
         <td>{this.props.place}</td>
         <td
           type="btn"
-          onClick={this.props.deleteRow}
+          onClick={(e) => (this.props.expenseId)}
           className="btn-danger"
           id='deleteButton'
         >

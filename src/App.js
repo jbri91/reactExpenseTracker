@@ -31,6 +31,7 @@ class App extends React.Component {
     const newExpense = [...this.state.expense];
 
     const expenses = {
+      id: Math.floor(new Date().getTime()*Math.random()),
       date: this.state.date,
       desc: this.state.desc,
       amount: this.state.amount,
@@ -43,15 +44,16 @@ class App extends React.Component {
     this.setState({ expense: newExpense });
   }
 
-  deleteRow(e) {
+  deleteRow(expenseId) {
     const newExpense = [...this.state.expense];
-    let index = newExpense.indexOf(e.target.parentElement.value)
-    console.log(e.target.parentElement.value)
-    if(index !== -1) {
-      newExpense.splice(index, 1);
-      this.setState({expense: newExpense})
-    }
-      e.target.parentElement.remove();
+    console.log(this.state.expenses.Id)
+    // let index = newExpense.indexOf(e.target.parentElement.value)
+    // console.log(e.target.parentElement.value)
+    // if(index !== -1) {
+    //   newExpense.splice(index, 1);
+    //   this.setState({expense: newExpense})
+    // }
+    //   e.target.parentElement.remove();
 
       // this.setState({ newExpense });
     

@@ -5,9 +5,6 @@ import Table from "./components/Table";
 import UserInput from "./components/UserInput";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
-
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -42,32 +39,29 @@ class App extends React.Component {
 
     newExpense.push(expenses);
 
-    localStorage.setItem('Expense', JSON.stringify(newExpense))
+    localStorage.setItem("Expense", JSON.stringify(newExpense));
     this.setState({ expense: newExpense });
-    
   }
 
   deleteRow(e) {
-  if(e.target.id === 'deleteButton') {
-    e.target.parentElement.remove()
-    const newExpense = [...this.state.expense]
-    this.setState({ expense: newExpense })
+    const newExpense = [...this.state.expense];
+    let index = newExpense.indexOf(e.target.parentElement.value)
+    console.log(e.target.parentElement.value)
+    if(index !== -1) {
+      newExpense.splice(index, 1);
+      this.setState({expense: newExpense})
+    }
+      e.target.parentElement.remove();
+
+      this.setState({ newExpense });
+    
   }
 
-  // localStorage.removeItem('Johnny')
-
-  
-}
-
-componentDidMount() {   
-const savedExpenses = JSON.parse(localStorage.getItem('Expense')) || [];
-const expense = [...this.state.expense, ...savedExpenses];
-this.setState({ expense });
-}
-
-
-  
-
+  componentDidMount() {
+    const savedExpenses = JSON.parse(localStorage.getItem("Expense")) || [];
+    const expense = [...this.state.expense, ...savedExpenses];
+    this.setState({ expense });
+  }
 
   render() {
     return (
@@ -81,9 +75,7 @@ this.setState({ expense });
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
-        <Table 
-        expenses={this.state.expense}
-        deleteRow={this.deleteRow} />
+        <Table expenses={this.state.expense} deleteRow={this.deleteRow} />
       </div>
     );
   }

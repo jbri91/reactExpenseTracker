@@ -1,6 +1,6 @@
 # Expense Tracker created with React and Bootstrap 4
 
-Click [here](https://intense-plateau-07231.herokuapp.com/) to track your expenses!
+Click [here](https://johnnys-react-expense-tracker.herokuapp.com/) to track your expenses!
 
 ![React Expense Tracker](src/readmeScreenshot.png)
 

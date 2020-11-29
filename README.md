@@ -1,4 +1,4 @@
-Expense Tracker created with React.js
+# Expense Tracker created with React.js
 
 Click [here](https://jbri91.github.io/snakeGame/) to try and get a high score!
 
@@ -13,4 +13,4 @@ I enjoyed the components aspect of React because it helped me break down the app
 
 # Author
 * Johnny Redry Briones Jr. - *Programmer*
-[linkedIn] (https://www.linkedin.com/in/johnny-briones-b6068383/)
+[linkedIn].(https://www.linkedin.com/in/johnny-briones-b6068383/)

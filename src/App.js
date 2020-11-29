@@ -45,16 +45,13 @@ class App extends React.Component {
   }
 
   deleteRow(expenseId) {
-    const newExpense = [...this.state.expense];
-    let matchingItem = JSON.parse(localStorage.getItem("Expense")).find(
-      (expense) => expense.id === expenseId
-    );
-    
     let index = this.state.expense.findIndex(item => item.id === expenseId)
-  console.log(expenseId)
-  console.log(matchingItem)
-  console.log(index)
-  
+    this.state.expense.splice(index, 1)
+    const newExpense = [...this.state.expense];
+    localStorage.setItem('Expense', JSON.stringify(newExpense))
+    this.setState({ newExpense })
+
+
 
 
   }

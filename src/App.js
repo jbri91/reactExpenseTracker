@@ -26,10 +26,14 @@ class App extends React.Component {
     });
   }
 
+
   handleSubmit(e) {
     e.preventDefault();
+    let stateExpense = this.state.expense
+    if (!stateExpense.desc || !stateExpense.amount || !stateExpense.place) {
+      alert('Please fill out')
+    } else {
     const newExpense = [...this.state.expense];
-
     const expenses = {
       id: Math.floor(new Date().getTime() * Math.random()),
       date: this.state.date,
@@ -37,23 +41,17 @@ class App extends React.Component {
       amount: this.state.amount,
       place: this.state.place,
     };
-
     newExpense.push(expenses);
-
     localStorage.setItem("Expense", JSON.stringify(newExpense));
     this.setState({ expense: newExpense });
-  }
+  }}
 
   deleteRow(expenseId) {
     let index = this.state.expense.findIndex(item => item.id === expenseId)
     this.state.expense.splice(index, 1)
     const newExpense = [...this.state.expense];
     localStorage.setItem('Expense', JSON.stringify(newExpense))
-    this.setState({ newExpense })
-
-
-
-
+    this.setState({ newExpense }) 
   }
 
   componentDidMount() {

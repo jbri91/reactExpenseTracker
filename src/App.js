@@ -49,13 +49,18 @@ class App extends React.Component {
     let matchingItem = JSON.parse(localStorage.getItem("Expense")).find(
       (expense) => expense.id === expenseId
     );
-
-  //  let index = this.state.expense.indexOf(matchingItem)
-  //  this.state.expense.splice(index, 1)
-  //  JSON.parse(localStorage.setItem('Expense',this.state.expense))
-  //   newExpense.push(this.state.expense)
-  //  this.setState({ expense: newExpense })
-
+    // console.log(this.state.expense.id[0])
+    let i = 0
+   for(i = 0; i < this.state.expense.length; i++) {
+     if(this.state.expense[i] === matchingItem)
+     return i
+   } console.log(i)
+   console.log(this.state.expense)
+    // let index = this.state.expense.indexOf(matchingItem)
+    console.log(this.state.expense)
+    // // console.log(newExpense)
+    // console.log(index)
+    // console.log(matchingItem)
   }
 
   componentDidMount() {

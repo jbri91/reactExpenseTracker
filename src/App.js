@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import Table from "./components/Table";
 import UserInput from "./components/UserInput";
 import "bootstrap/dist/css/bootstrap.min.css";
+import backgroundImage from './abstractBlackAndWhiteBackground.jpg'
+
 
 class App extends React.Component {
   constructor(props) {
@@ -75,7 +77,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{ backgroundImage: `url(${backgroundImage})`}}>
         <Header />
         <UserInput
           date={this.state.expense.date}

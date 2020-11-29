@@ -16,7 +16,7 @@ class Table extends React.Component {
               <th>Delete Expense</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody style={{fontWeight: "bold", fontStyle: "italic"}}>
             {this.props.expenses.map((item, key) => 
             <ExpenseRow 
             expenseId={this.props.expenses[key].id}

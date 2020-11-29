@@ -9,7 +9,7 @@ class ExpenseRow extends React.Component {
         <td>{this.props.place}</td>
         <td
           type="btn"
-          onClick={(e) => (this.props.expenseId)}
+          onClick={(e) => this.props.deleteRow(this.props.expenseId)}
           className="btn-danger"
           id='deleteButton'
         >

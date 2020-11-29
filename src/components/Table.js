@@ -19,7 +19,7 @@ class Table extends React.Component {
           <tbody>
             {this.props.expenses.map((item, key) => 
             <ExpenseRow 
-            id={this.props.expenses[key].expenseId}
+            expenseId={this.props.expenses[key].id}
             date={this.props.expenses[key].date}
             desc={this.props.expenses[key].desc}
             amount={this.props.expenses[key].amount}

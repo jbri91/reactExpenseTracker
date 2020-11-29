@@ -2,7 +2,7 @@ Expense Tracker created with React.js
 
 Click [here](https://jbri91.github.io/snakeGame/) to try and get a high score!
 
-![React Expense Tracker](.src/readmeScreenshot.png)
+![React Expense Tracker](src/readmeScreenshot.png)
 
 # Summary
 

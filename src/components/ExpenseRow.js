@@ -11,7 +11,7 @@ class ExpenseRow extends React.Component {
           type="btn"
           onClick={(e) => this.props.deleteRow(this.props.expenseId)}
           className="btn-danger"
-          id='deleteButton'
+          id="deleteButton"
         >
           X
         </td>

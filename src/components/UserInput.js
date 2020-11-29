@@ -3,7 +3,7 @@ import React from "react";
 class UserInput extends React.Component {
   render() {
     return (
-      <form onSubmit={this.props.handleSubmit} >
+      <form onSubmit={this.props.handleSubmit}>
         <input
           name="date"
           className="col-sm-6 col-md-3"
@@ -38,10 +38,7 @@ class UserInput extends React.Component {
           value={this.props.place}
           onChange={this.props.handleChange}
         ></input>
-        <button
-          type="submit"
-          className="btn btn-secondary"
-        >
+        <button type="submit" className="btn btn-secondary">
           Submit
         </button>
       </form>

@@ -1,6 +1,6 @@
-# Expense Tracker created with React.js and Bootstrap 4
+# Expense Tracker created with React and Bootstrap 4
 
-Click [here](https://jbri91.github.io/snakeGame/) to try and get a high score!
+Click [here](https://jbri91.github.io/reactExpenseTracker/) to track your expenses!
 
 ![React Expense Tracker](src/readmeScreenshot.png)
 
@@ -13,4 +13,4 @@ I enjoyed the components aspect of React because it helped me break down the app
 
 # Author
 * Johnny Redry Briones Jr. - *Programmer*
-* [linkedIn](https://www.linkedin.com/in/johnny-briones-b6068383/)
+* [LinkedIn](https://www.linkedin.com/in/johnny-briones-b6068383/)

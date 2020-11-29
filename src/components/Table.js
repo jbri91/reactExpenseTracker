@@ -2,7 +2,6 @@ import React from "react";
 import ExpenseRow from "./ExpenseRow";
 
 class Table extends React.Component {
-
   render() {
     return (
       <div>
@@ -16,17 +15,19 @@ class Table extends React.Component {
               <th>Delete Expense</th>
             </tr>
           </thead>
-          <tbody>
-            {this.props.expenses.map((item, key) => 
-            <ExpenseRow 
-            date={this.props.expenses[key].date}
-            desc={this.props.expenses[key].desc}
-            amount={this.props.expenses[key].amount}
-            place={this.props.expenses[key].place}
-            item={item} key={key} 
-            deleteRow={this.props.deleteRow}
-            />)}
-            
+          <tbody style={{ fontWeight: "bold", fontStyle: "italic" }}>
+            {this.props.expenses.map((item, key) => (
+              <ExpenseRow
+                expenseId={this.props.expenses[key].id}
+                date={this.props.expenses[key].date}
+                desc={this.props.expenses[key].desc}
+                amount={this.props.expenses[key].amount}
+                place={this.props.expenses[key].place}
+                item={item}
+                key={key}
+                deleteRow={this.props.deleteRow}
+              />
+            ))}
           </tbody>
         </table>
       </div>

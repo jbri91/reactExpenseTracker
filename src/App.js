@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Table from "./components/Table";
 import UserInput from "./components/UserInput";
 import "bootstrap/dist/css/bootstrap.min.css";
+import backgroundImage from './abstractBlackAndWhiteBackground.jpg'
 
 
 class App extends React.Component {
@@ -14,31 +15,7 @@ class App extends React.Component {
       desc: "",
       amount: "",
       place: "",
-      expense: [
-        {
-          date: "11/18/2020",
-          desc: "Computer",
-          amount: "$999",
-          place: "Apple",
-        },
-        { 
-        date: "11/18/2020", 
-        desc: "Bookbag", 
-        amount: "$90", 
-        place: "Nike" },
-        {
-          date: "11/18/2020",
-          desc: "Speaker",
-          amount: "$500",
-          place: "BestBuy",
-        },
-        {
-          date: "11/18/2020",
-          desc: "Coffee",
-          amount: "$5",
-          place: "Starbucks",
-        },
-      ],
+      expense: [],
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -51,47 +28,56 @@ class App extends React.Component {
     });
   }
 
+
   handleSubmit(e) {
     e.preventDefault();
-
+    // let stateExpense = this.state.expense
+    let date = document.getElementById('date');
+    let desc = document.getElementById('desc');
+    let amount = document.getElementById('amount');
+    let place = document.getElementById('place');
     const newExpense = [...this.state.expense];
-
     const expenses = {
+      id: Math.floor(new Date().getTime() * Math.random()),
       date: this.state.date,
       desc: this.state.desc,
       amount: this.state.amount,
       place: this.state.place,
     };
 
+
+    if (!date.value || !desc.value || !amount.value || !place.value) {
+      alert('Please Fill Out ')
+    } else {
     newExpense.push(expenses);
-    
+    date.value=""
+    desc.value=""
+    amount.value=""
+    place.value=""
+    localStorage.setItem("Expense", JSON.stringify(newExpense));
     this.setState({ expense: newExpense });
+
     
   }
+}
 
-  deleteRow(e) {
-  console.log(e.target.parentElement)
-  if(e.target.id === 'deleteButton') {
-    e.target.parentElement.remove()
+  deleteRow(expenseId) {
+    let index = this.state.expense.findIndex(item => item.id === expenseId)
+    this.state.expense.splice(index, 1)
+    const newExpense = [...this.state.expense];
+    localStorage.setItem('Expense', JSON.stringify(newExpense))
+    this.setState({ newExpense }) 
   }
 
-  const newExpense = [...this.state.expense]
-
-  // const expenses = {
-  //   date:this.state.date,
-  //   desc: this.state.desc,
-  //   amount: this.state.amount,
-  //   place: this.state.place
-  // }
-
-  this.setState({ expense: newExpense })
-
+  componentDidMount() {
+    const savedExpenses = JSON.parse(localStorage.getItem("Expense")) || [];
+    const expense = [...this.state.expense, ...savedExpenses];
+    this.setState({ expense });
   }
 
   render() {
-    console.log(this.state)
     return (
-      <div className="App">
+      <div className="App" style={{ backgroundImage: `url(${backgroundImage})`}}>
         <Header />
         <UserInput
           date={this.state.expense.date}
@@ -101,9 +87,7 @@ class App extends React.Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
-        <Table 
-        expenses={this.state.expense}
-        deleteRow={this.deleteRow} />
+        <Table expenses={this.state.expense} deleteRow={this.deleteRow} />
       </div>
     );
   }

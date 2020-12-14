@@ -1,15 +1,16 @@
 import React from "react";
-class ExpenseRow extends React.Component {
-  render() {
+
+const ExpenseRow = (props) => {
     return (
       <tr>
-        <td>{this.props.date}</td>
-        <td>{this.props.desc}</td>
-        <td>${this.props.amount}</td>
-        <td>{this.props.place}</td>
+        <td>{props.date}</td>
+        <td>{props.desc}</td>
+        <td>${props.amount}</td>
+        <td>{props.place}</td>
         <td
+          style={{cursor: 'pointer'}}
           type="btn"
-          onClick={(e) => this.props.deleteRow(this.props.expenseId)}
+          onClick={(e) => props.deleteRow(props.expenseId)}
           className="btn-danger"
           id="deleteButton"
         >
@@ -17,7 +18,7 @@ class ExpenseRow extends React.Component {
         </td>
       </tr>
     );
-  }
+  
 }
 
 export default ExpenseRow;

@@ -1,13 +1,12 @@
 import React from "react";
 import ExpenseRow from "./ExpenseRow";
 
-class Table extends React.Component {
-  render() {
+const Table = (props) => {
     return (
       <div>
         <table className="table table-bordered table-hover">
           <thead className="thead-dark thead-border">
-            <tr>
+            <tr style={{ fontSize: '20px' }}>
               <th>Date Of Expense</th>
               <th>Description of Expense</th>
               <th>Amount</th>
@@ -16,23 +15,22 @@ class Table extends React.Component {
             </tr>
           </thead>
           <tbody style={{ fontWeight: "bold", fontStyle: "italic" }}>
-            {this.props.expenses.map((item, key) => (
+            {props.expenses.map((expenseItem) => (
               <ExpenseRow
-                expenseId={this.props.expenses[key].id}
-                date={this.props.expenses[key].date}
-                desc={this.props.expenses[key].desc}
-                amount={this.props.expenses[key].amount}
-                place={this.props.expenses[key].place}
-                item={item}
-                key={key}
-                deleteRow={this.props.deleteRow}
+                key={expenseItem.id}
+                date={expenseItem.date}
+                desc={expenseItem.desc}
+                amount={expenseItem.amount}
+                place={expenseItem.place}
+                deleteRow={props.deleteRow}
+                expenseId={expenseItem.id}
               />
             ))}
           </tbody>
         </table>
       </div>
     );
-  }
+  
 }
 
 export default Table;
